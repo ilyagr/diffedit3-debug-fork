@@ -13534,7 +13534,7 @@ function to_text(file_entry) {
     return null;
   }
 }
-const TAURI_BACKEND = "__TAURI__" in globalThis;
+const TAURI_BACKEND = "__TAURI_INTERNALS__" in globalThis;
 async function backend_request(command_name, method, content) {
   if (TAURI_BACKEND) {
     let tauri_args = {};
@@ -14044,4 +14044,4 @@ window.addEventListener("DOMContentLoaded", async () => {
     });
   }
 });
-//# sourceMappingURL=index-DWcbNjgV.js.map
+//# sourceMappingURL=index-B7meSa5P.js.map
