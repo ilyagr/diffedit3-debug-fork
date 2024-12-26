@@ -13490,6 +13490,9 @@ function transformCallback(callback, once = false) {
 async function invoke(cmd, args = {}, options) {
   return window.__TAURI_INTERNALS__.invoke(cmd, args, options);
 }
+function isTauri() {
+  return "isTauri" in window && !!window.isTauri;
+}
 var TauriEvent;
 (function(TauriEvent2) {
   TauriEvent2["WINDOW_RESIZED"] = "tauri://resize";
@@ -13534,7 +13537,7 @@ function to_text(file_entry) {
     return null;
   }
 }
-const TAURI_BACKEND = "__TAURI_INTERNALS__" in globalThis;
+const TAURI_BACKEND = isTauri();
 async function backend_request(command_name, method, content) {
   if (TAURI_BACKEND) {
     let tauri_args = {};
@@ -14044,4 +14047,4 @@ window.addEventListener("DOMContentLoaded", async () => {
     });
   }
 });
-//# sourceMappingURL=index-B7meSa5P.js.map
+//# sourceMappingURL=index-CCA20b_a.js.map
