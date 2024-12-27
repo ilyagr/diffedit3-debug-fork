@@ -718,7 +718,7 @@ dependencies = [
  "rust-embed",
  "serde",
  "tempfile",
- "thiserror 1.0.69",
+ "thiserror 2.0.9",
  "tokio",
  "toml 0.8.19",
  "tracing-subscriber",
