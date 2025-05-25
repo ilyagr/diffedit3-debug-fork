@@ -157,7 +157,7 @@ pub async fn run_server(
     let acceptor = 'acceptor: {
         let mut error = None;
         for port in ports_to_try {
-            let listener = TcpListener::bind(format!("127.0.0.1:{}", port));
+            let listener = TcpListener::bind(format!("127.0.0.1:{port}"));
             match listener.into_acceptor().await {
                 Ok(a) => break 'acceptor a,
                 Err(err) => {
